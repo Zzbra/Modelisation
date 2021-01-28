@@ -19,6 +19,7 @@ public class SAT {
 
     public void computeCloses(){
         computePresentClause();
+        computeNoDuplicateClause();
         computeNotAllInOneBasquetClause();
     }
     private void computePresentClause(){
@@ -29,6 +30,21 @@ public class SAT {
             }
             clauses.add(sb.toString());
             nbClauses++;
+        }
+    }
+
+    private void computeNoDuplicateClause(){
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < k; j++) {
+                StringBuilder sb = new StringBuilder();
+                for (int l = 0; l < k; l++) {
+                    if(j != l){
+                        sb.append(-(i +l*n) + " ");
+                    }
+                }
+                clauses.add(sb.toString());
+                nbClauses++;
+            }
         }
     }
 

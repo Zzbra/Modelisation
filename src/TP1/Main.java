@@ -10,14 +10,14 @@ public class Main {
         sat.computeCloses();
 //        sat.printClauses();
         sat.outputDimacs("model");
-        Runtime rt = Runtime.getRuntime();
-        Process proc = rt.exec("minisat model result");
-        BufferedReader stdInput = new BufferedReader(new
-                InputStreamReader(proc.getInputStream()));
-
-        String s = null;
-        while( (s =  stdInput.readLine()) != null){
-            System.out.println(s);
-        }
+//        Runtime rt = Runtime.getRuntime();
+//        Process proc = rt.exec("minisat model result");
+//        BufferedReader stdInput = new BufferedReader(new
+//                InputStreamReader(proc.getInputStream()));
+//
+//        String s = null;
+//        while( (s =  stdInput.readLine()) != null){
+//            System.out.println(s);
+//        }
     }
 }
