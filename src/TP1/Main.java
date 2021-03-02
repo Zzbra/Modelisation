@@ -6,18 +6,18 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        SAT sat = new SAT(66,4);
+        SAT sat = new SAT(5,3);
         sat.computeCloses();
 //        sat.printClauses();
         sat.outputDimacs("model");
-//        Runtime rt = Runtime.getRuntime();
-//        Process proc = rt.exec("minisat model result");
-//        BufferedReader stdInput = new BufferedReader(new
-//                InputStreamReader(proc.getInputStream()));
-//
-//        String s = null;
-//        while( (s =  stdInput.readLine()) != null){
-//            System.out.println(s);
-//        }
+        Runtime rt = Runtime.getRuntime();
+        Process proc = rt.exec("minisat model result");
+        BufferedReader stdInput = new BufferedReader(new
+                InputStreamReader(proc.getInputStream()));
+
+        String s = null;
+        while( (s =  stdInput.readLine()) != null){
+            System.out.println(s);
+        }
     }
 }
